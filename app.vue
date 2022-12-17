@@ -5,6 +5,9 @@
 </template>
 
 <script setup lang="ts">
-let esLintTest = 123
-esLintTest = '456'
+// gtag usage
+// const { $gtag } = useNuxtApp()
+// onMounted(() => {
+//   $gtag('event', 'login', { method: 'Google' })
+// })
 </script>

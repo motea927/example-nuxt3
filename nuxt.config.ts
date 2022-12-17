@@ -8,4 +8,14 @@ export default defineNuxtConfig({
   vite: {
     plugins: [eslint()],
   },
+  modules: [
+    (_inlineOptions, nuxt) => {
+      const { GA_ID = '' } = nuxt.options.runtimeConfig.public
+      nuxt.options.app.head.script = nuxt.options.app.head.script || []
+      nuxt.options.app.head.script.unshift({
+        src: `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`,
+        async: true,
+      })
+    },
+  ],
 })
